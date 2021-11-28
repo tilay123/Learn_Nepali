@@ -6,7 +6,7 @@
         "type": "word",
         "nepali": "नमस्ते 🙏",
         "transliteration": "Namaste 🙏",
-        "description": "नमस्ते is most basic greeting in Nepali. Say it with both hands together like praying. It is more common than saying Good Morning/Evening/Afternoon in Nepali."
+        "description": "नमस्ते is a most basic greeting in Nepali. Say it with both hands together like praying. It is more common than saying Good Morning/Evening/Afternoon in Nepali."
       },
       {
         "type": "tableR",
@@ -16,7 +16,7 @@
           [
             {
               "transliteration": "talai kasto chha?",
-              "nepali": "तलाई कस्तो छ?"
+              "nepali": "तँलाई कस्तो छ?"
             },
             {
               "transliteration": "timilai kasto chha?",
@@ -120,7 +120,7 @@
     "data": [
       {
         "type": "text",
-        "text": "Nepali sentences are structured differently than in English. Translating English sentences to Nepali and vice versa is like playing a sentence unscramble game because the sentences with their words will not be in the right order. So, we need to rearrange sentences before translating them in such a away that makes sense in the language we're translating to. Let's take a look at a sentence example."
+        "text": "Nepali sentences are structured differently than in English. Translating English sentences to Nepali and vice versa is like playing a sentence unscramble game because the sentences with their words will not be in the right order. So, we need to rearrange sentences before translating them in such a way that makes sense in the language we're translating to. Let's take a look at a sentence example."
       },
       {
         "type": "tableE",
@@ -142,7 +142,7 @@
     "data": [
       {
         "type": "text",
-        "text": "Nepali is a simple language for many reasons. Two of the reasons is that it has no capitalizations and no articles(the and a/an). The rule is that you remove and ignore every \"the\" in a sentence and change the article \"a\" or \"an\" to a quantitative number.  Let's take a look at an example: "
+        "text": "Nepali is a simple language for many reasons. Two of the reasons is that it has no capitalizations and no articles(the and a/an). The rule is that you remove and ignore every \"the\" in a sentence and change the article \"a\" or \"an\" to a quantitative number. Let's take a look at an example: "
       },
       {
         "type": "example",
@@ -153,21 +153,155 @@
       },
       {
         "type": "text",
-        "text": "There = त्यहाँ. एउटा = one, स्याउ = apple, and छ = is. As you can see above, \"an\" and been changed to \"one\" and it's using the same case. It is using the same case because uppercase or lowercase does not exist in Nepali, theres only single-case. It may not make grammatical sense in English but in Nepali it makes perfect sense. Just remember that some words in English doesn't exist in Nepali so you need to find an alternative way to say it."
+        "text": "There = त्यहाँ. एउटा = one, स्याउ = apple, and छ = is. As you can see above, \"an\" and been changed to \"one\" and it's using the same case. It is using the same case because uppercase or lowercase does not exist in Nepali, there's only a single-case. It may not make grammatical sense in English but in Nepali, it makes perfect sense. Just remember that some words in English don't exist in Nepali so you need to find an alternative way to say it."
       },
 
       {
         "type": "text",
-        "text": "Note: छ has multiple meanings in Nepali. It also means \"I have\". But the in context of the sentence above, it means \"is\"."
+        "text": "Note: छ has multiple meanings in Nepali. It also means \"I have\" and number 6. But the in context of the sentence above, it means \"is\"."
       }
     ]
   },
   {
-    "title": "Ways to Show Respect",
+    "title": "Ways to say you",
     "data": [
       {
         "type": "text",
-        "text": "There are 4 ways to talk with respect."
+        "text": "There are many different ways of saying \"you\" in Nepali but it has been divided into four levels of respect. It does not only mean \"you\" but it also tells people what level of respect you're giving them. There are four different levels of respect you can give to a person. Those are Low, Moderate, High, and Extreme Respect. When talking to a person you need to pick one of the four and be consistent throughout your life until something happens that makes you want to respect them even more or less. Also, the level of respect of \"you\" you choose governs the verb. Almost all verbs in Nepali also have 4 different ways of saying the same word but a level of respect is associated with it like the word \"you\". So, when making a sentence in Nepali, you need to match the level of respect of \"you\" with the level of respect of a verb. You can't just go with a moderate level of respect of \"you\" and a high level of respect of a verb and make a sentence. It will be grammatically incorrect in Nepali. Furthermore, saying \"you\" in Nepali becomes a little harder when more than one English words make up one word in Nepali.  Let's take a look at all four levels of respect."
+      },
+      { "type": "subtitle", "text": "Low Respect" },
+
+      {
+        "type": "text",
+        "text": "You can go with this level of respect when talking to little kids, friends, siblings, anyone younger than you, or who have the same or lower status than you. However, it is not recommended for Nepali language learners to go with this one. Even though it is not recommended, Nepali language learners must have a solid understanding of this way of communicating because people of higher status or people older than you may use this way of communicating with you."
+      },
+      {
+        "type": "word",
+        "transliteration": "Ta",
+        "nepali": "तँ",
+        "english": "You"
+      },
+      {
+        "type": "word",
+        "transliteration": "Ta",
+        "nepali": "तँलाई",
+        "english": "तँ + लाई. To you."
+      },
+      {
+        "type": "word",
+        "transliteration": "Ta-haru",
+        "nepali": "तँहरु",
+        "english": "plural you, Many of you."
+      },
+      {
+        "type": "word",
+        "transliteration": "Ta-haru-lai",
+        "nepali": "तँहरुलाई",
+        "english": "तँ + हरु + लाई. plural you, To many of you"
+      },
+
+      {
+        "type": "word",
+        "transliteration": "Taile",
+        "nepali": "तैँले",
+        "english": "You did or Did you."
+      },
+      {
+        "type": "word",
+        "transliteration": "Tero",
+        "nepali": "तेरो",
+        "english": "Your"
+      },
+
+      {
+        "type": "text",
+        "text": "Note: \"लाई\" and \"हरु\" are suffixes. To learn more about it go to Suffixes lesson."
+      },
+
+      { "type": "subtitle", "text": "Moderate Respect" },
+      {
+        "type": "word",
+        "transliteration": "Timi",
+        "nepali": "तिमी",
+        "english": "You"
+      },
+      {
+        "type": "word",
+        "transliteration": "Timi-haru",
+        "nepali": "तिमीहरु",
+        "english": "plural you, Many of you."
+      },
+
+      {
+        "type": "word",
+        "transliteration": "Timro",
+        "nepali": "तिम्रो",
+        "english": "Your"
+      },
+      {
+        "type": "word",
+        "transliteration": "Timile",
+        "nepali": "तिमीले",
+        "english": "You did or Did you."
+      },
+      { "type": "subtitle", "text": "High Respect" },
+      {
+        "type": "word",
+        "transliteration": "Tapai",
+        "nepali": "तपाई",
+        "english": "You"
+      },
+      {
+        "type": "word",
+        "transliteration": "Tapai-haru",
+        "nepali": "तपाईहरु",
+        "english": "plural you, Many of you."
+      },
+      {
+        "type": "word",
+        "transliteration": "Tapaiko",
+        "nepali": "तपाईको",
+        "english": "Your"
+      },
+      {
+        "type": "word",
+        "transliteration": "Tapaile",
+        "nepali": "तपाईले",
+        "english": "You did or Did you."
+      },
+      {
+        "type": "text",
+        "text": "Note: \"लाई\" and \"हरु\" are suffixes. To learn more about it go to Suffixes lesson."
+      },
+      { "type": "subtitle", "text": "Extreme Respect" },
+      {
+        "type": "word",
+        "transliteration": "Tapai",
+        "nepali": "तपाई",
+        "english": "You"
+      },
+      {
+        "type": "word",
+        "transliteration": "Tapai-haru",
+        "nepali": "तपाईहरु",
+        "english": "plural you, Many of you."
+      },
+      {
+        "type": "word",
+        "transliteration": "Tapaiko",
+        "nepali": "तपाईको",
+        "english": "Your"
+      },
+      {
+        "type": "word",
+        "transliteration": "Tapaile",
+        "nepali": "तपाईले",
+        "english": "You did or Did you."
+      },
+
+      {
+        "type": "text",
+        "text": "Note: \"लाई\", \"हरु\" and \"को\" are suffixes. To learn more about it go to Suffixes lesson."
       }
     ]
   }

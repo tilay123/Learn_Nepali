@@ -44,10 +44,12 @@ export default function FirstLesson({ data }) {
           sx={{
             width: 300,
             m: 1,
+            height: "100%",
+
             display: { xs: "none", sm: "block" },
           }}
         >
-          <List component="nav" aria-label="secondary mailbox folder">
+          <List component="nav" sx={{ position: "fixed" }} aria-label="\">
             <Box
               sx={{ display: "flex", flexDirection: "column", pl: 2, pt: 2 }}
             >
@@ -66,7 +68,7 @@ export default function FirstLesson({ data }) {
           </List>
         </Paper>
         <Container sx={{ mt: 1 }}>
-          <Typography variant="h3" fontWeight="700" sx={{ mb: 3 }}>
+          <Typography variant="h3" fontWeight="700" sx={{ mb: 6 }}>
             {data.title}
           </Typography>
 
@@ -80,6 +82,17 @@ export default function FirstLesson({ data }) {
                     {excerpt.text}
                   </Typography>
                 );
+              case "subtitle":
+                return (
+                  <Typography
+                    key={index}
+                    variant="h4"
+                    sx={{ mt: 3, mb: 1, fontWeight: "500" }}
+                  >
+                    {excerpt.text}
+                  </Typography>
+                );
+
               case "tableR":
                 return <RespectTable key={index} data={excerpt} />;
               case "tableE":
