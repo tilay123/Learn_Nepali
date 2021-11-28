@@ -1,0 +1,174 @@
+[
+  {
+    "title": "Ways to Greet",
+    "data": [
+      {
+        "type": "word",
+        "nepali": "नमस्ते 🙏",
+        "transliteration": "Namaste 🙏",
+        "description": "नमस्ते is most basic greeting in Nepali. Say it with both hands together like praying. It is more common than saying Good Morning/Evening/Afternoon in Nepali."
+      },
+      {
+        "type": "tableR",
+        "title": "How are you?",
+        "description1": "There are many ways to ask this question in Nepali. Take a look at the table below.",
+        "data": [
+          [
+            {
+              "transliteration": "talai kasto chha?",
+              "nepali": "तलाई कस्तो छ?"
+            },
+            {
+              "transliteration": "timilai kasto chha?",
+              "nepali": "तिमीलाई कस्तो छ?"
+            },
+            {
+              "transliteration": "tapailai kasto chha?",
+              "nepali": "तपाईलई कस्तो छ?"
+            }
+          ],
+          [
+            {
+              "nepali": "तेरो हालखबर कस्तो छ?",
+              "transliteration": "Tero hal-khabar kasto chha"
+            },
+            {
+              "nepali": "तिम्रो हालखबर कस्तो छ?",
+              "transliteration": "Timro hal-khabar kasto chha"
+            },
+            {
+              "nepali": "तपाइको हालखबर कस्तो छ?",
+              "transliteration": "Tapaiko hal-khabar kasto chha"
+            }
+          ],
+          [
+            {
+              "transliteration": "ta sanchai chas?",
+              "nepali": "तँ सन्चै छस?"
+            },
+            {
+              "transliteration": "timi sanchai chau?",
+              "nepali": "तिमी सन्चै छौ?"
+            },
+            {
+              "transliteration": "tapai sanchai hunnu-huncha?",
+              "nepali": "तपाई सन्चै हुन्नुहुन्छ?"
+            }
+          ],
+          [
+            {
+              "transliteration": "ta kushal-lai chas?",
+              "nepali": "तँ कुशल्लै छस?"
+            },
+            {
+              "transliteration": "timi kushal-lai chau?",
+              "nepali": "तिमी कुशल्लै छौ?"
+            },
+            {
+              "transliteration": "tapai kushal-lai hunnu-huncha?",
+              "nepali": "तपाई कुशल्लै हुन्नुहुन्छ?"
+            }
+          ],
+          [
+            {
+              "transliteration": "ta thikai chas?",
+              "nepali": "तँ ठिकै छस?"
+            },
+            {
+              "transliteration": "timi thikai chau?",
+              "nepali": "तिमी ठिकै छौ?"
+            },
+            {
+              "transliteration": "tapai thikai hunnu-huncha?",
+              "nepali": "तपाई ठिकै हुन्नुहुन्छ?"
+            }
+          ],
+          [
+            {
+              "transliteration": "ta aaramai chas?",
+              "nepali": "तँ आरमै छस?"
+            },
+            {
+              "transliteration": "timi aaramai chau?",
+              "nepali": "तिमी आरमै छौ?"
+            },
+            {
+              "transliteration": "tapai aaramai hunnu-huncha?",
+              "nepali": "तपाई आरमै हुन्नुहुन्छ?"
+            }
+          ]
+        ]
+      },
+      {
+        "type": "word",
+        "nepali": "के छ?",
+        "english": "What's up?",
+        "transliteration": "Ke cha?"
+      },
+      {
+        "type": "word",
+        "nepali": "फेरी भेटौला",
+        "english": "See you again.",
+        "transliteration": "Feri Vetaula",
+        "description": "It's a nice way to end a conversation and ask them to meet sometime in the future."
+      }
+    ]
+  },
+
+  {
+    "title": "Sentence Structure",
+    "data": [
+      {
+        "type": "text",
+        "text": "Nepali sentences are structured differently than in English. Translating English sentences to Nepali and vice versa is like playing a sentence unscramble game because the sentences with their words will not be in the right order. So, we need to rearrange sentences before translating them in such a away that makes sense in the language we're translating to. Let's take a look at a sentence example."
+      },
+      {
+        "type": "tableE",
+        "data": [
+          ["I", "like", "cars."],
+          ["मलाई", "गाडीहरु", "मन पर्छ।"],
+          ["Malai", "gadi-haru", "mun parcha."]
+        ]
+      },
+      {
+        "type": "text",
+        "text": "I = मलाई, like = मन पर्छ, and गाडीहरु = cars. The sentence \"I like cars.\" was reorganized to \"I cars like.\", which makes no sense in English, and then it was translated to Nepali word by word. \"I cars like.\" makes no sense in English but if you translated it to Nepali word by word then it makes perfect sense."
+      }
+    ]
+  },
+
+  {
+    "title": "Nonexistent Words",
+    "data": [
+      {
+        "type": "text",
+        "text": "Nepali is a simple language for many reasons. Two of the reasons is that it has no capitalizations and no articles(the and a/an). The rule is that you remove and ignore every \"the\" in a sentence and change the article \"a\" or \"an\" to a quantitative number.  Let's take a look at an example: "
+      },
+      {
+        "type": "example",
+        "english": "There is an apple.",
+        "nepali": "त्यहाँ एउटा स्याउ छ।",
+        "transliteration": "Tyea-ha auta seeau cha.",
+        "literal": "There's one apple."
+      },
+      {
+        "type": "text",
+        "text": "There = त्यहाँ. एउटा = one, स्याउ = apple, and छ = is. As you can see above, \"an\" and been changed to \"one\" and it's using the same case. It is using the same case because uppercase or lowercase does not exist in Nepali, theres only single-case. It may not make grammatical sense in English but in Nepali it makes perfect sense. Just remember that some words in English doesn't exist in Nepali so you need to find an alternative way to say it."
+      },
+
+      {
+        "type": "text",
+        "text": "Note: छ has multiple meanings in Nepali. It also means \"I have\". But the in context of the sentence above, it means \"is\"."
+      }
+    ]
+  },
+  {
+    "title": "Ways to Show Respect",
+    "data": [
+      {
+        "type": "text",
+        "text": "There are 4 ways to talk with respect."
+      }
+    ]
+  }
+]

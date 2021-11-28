@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Read and Write",
+    "description": "Learn to read and write",
+    "data": [
+      {
+        "name": "Consonants",
+        "description": "Learn about consonants.",
+        "examples": "क ख ग ..."
+      },
+      {
+        "name": "Vowels",
+        "description": "Learn about vowels.",
+        "examples": "अ आ इ ..."
+      },
+      {
+        "name": "Diacritics || मात्रा चिनारी",
+        "description": "Learn about heavily used diacritics.",
+        "examples": "ी  ु ौ ..."
+      },
+      {
+        "name": "Diacritics on Consonants",
+        "examples": "का कि की ..."
+      },
+      {
+        "name": "Special Characters",
+        "examples": "ॐ"
+      },
+      {
+        "name": "Numbers ",
+        "description": "Learn about numbers.",
+        "examples": "१ २ ३ ..."
+      }
+    ]
+  },
+  {
+    "title": "Vocabulary",
+    "description": "Learn new words",
+    "data": [
+      {
+        "name": "Weather",
+        "description": "Learn about weathers.",
+        "examples": "sunny, rainy, ..."
+      },
+      {
+        "name": "Family",
+        "description": "Learn about relationships.",
+        "example": "father, mother, ..."
+      },
+      {
+        "name": "Sickness",
+        "description": "Learn about sicknesses.",
+        "examples": "headache, cut, ..."
+      },
+      {
+        "name": "Body Parts",
+        "description": "Learn about body parts.",
+        "examples": "stomach, ear, ..."
+      }
+    ]
+  },
+  {
+    "title": "Grammar",
+    "description": "Learn grammar rules",
+    "data": [
+      {
+        "name": "Verb and Verb Tenses",
+        "description": "Learn to use verbs in a sentence correctly"
+      },
+      {
+        "name": "Nouns",
+        "description": "Nouns represent person, place or things."
+      },
+      {
+        "name": "Pronouns",
+        "description": "",
+        "examples": "he, she ..."
+      },
+
+      {
+        "name": "Tenses",
+        "description": "",
+        "examples": "past, present, and future tense"
+      },
+      {
+        "name": "Postpositions",
+        "description": "Connector words that come after another word.",
+        "examples": "मा(ma), को(ko) ..."
+      }
+    ]
+  }
+]
