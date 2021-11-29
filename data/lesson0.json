@@ -167,13 +167,13 @@
     "data": [
       {
         "type": "text",
-        "text": "There are many different ways of saying \"you\" in Nepali but it has been divided into four levels of respect. It does not only mean \"you\" but it also tells people what level of respect you're giving them. There are four different levels of respect you can give to a person. Those are Low, Moderate, High, and Extreme Respect. When talking to a person you need to pick one of the four and be consistent throughout your life until something happens that makes you want to respect them even more or less. Also, the level of respect of \"you\" you choose governs the verb. Almost all verbs in Nepali also have 4 different ways of saying the same word but a level of respect is associated with it like the word \"you\". So, when making a sentence in Nepali, you need to match the level of respect of \"you\" with the level of respect of a verb. You can't just go with a moderate level of respect of \"you\" and a high level of respect of a verb and make a sentence. It will be grammatically incorrect in Nepali. Furthermore, saying \"you\" in Nepali becomes a little harder when more than one English words make up one word in Nepali.  Let's take a look at all four levels of respect."
+        "text": "There are many different ways of saying \"you\" in Nepali but it has been divided into four levels of respect. When you say \"you\" it not only means \"you\" but it also tells people what level of respect you're giving them. There are four different levels of respect you can give to a person. Those are Low, Moderate, High, and Extreme Respect. When talking to a person you need to pick one of the four and be consistent throughout your life until something happens that makes you want to respect them even more or less. Also, the level of respect of \"you\" you choose governs the verb. Almost all verbs in Nepali also have 4 different ways of saying the same word but a level of respect is associated with it like the word \"you\". So, when making a sentence in Nepali, you need to match the level of respect of \"you\" with the level of respect of a verb. You can't just go with a moderate level of respect of \"you\" and a high level of respect of a verb and make a sentence. It will be grammatically incorrect in Nepali. Furthermore, saying \"you\" in Nepali becomes a little harder when more than one English words make up one word in Nepali.  Let's take a look at all four levels of respect."
       },
       { "type": "subtitle", "text": "Low Respect" },
 
       {
         "type": "text",
-        "text": "You can go with this level of respect when talking to little kids, friends, siblings, anyone younger than you, or who have the same or lower status than you. However, it is not recommended for Nepali language learners to go with this one. Even though it is not recommended, Nepali language learners must have a solid understanding of this way of communicating because people of higher status or people older than you may use this way of communicating with you."
+        "text": "You can go with this level of respect when talking to little kids, siblings, anyone younger than you, or who have a lower status than you. However, it is not recommended for Nepali language learners to go with this one. Even though it is not recommended, Nepali language learners must have a solid understanding of this way of communicating because people of higher status or people older than you may use this way of communicating with you."
       },
       {
         "type": "word",
@@ -220,6 +220,10 @@
 
       { "type": "subtitle", "text": "Moderate Respect" },
       {
+        "type": "text",
+        "text": "Usually, people use this level of respect when talking to friends or who have the same status as them.  It's a very option to go with this one when talking to little kids, siblings, anyone younger than you, or who have a lower status than you as well."
+      },
+      {
         "type": "word",
         "transliteration": "Timi",
         "nepali": "तिमी",
@@ -229,7 +233,13 @@
         "type": "word",
         "transliteration": "Timi-haru",
         "nepali": "तिमीहरु",
-        "english": "plural you, Many of you."
+        "english": "Many of you. plural you."
+      },
+      {
+        "type": "word",
+        "transliteration": "Timi-haru-lai",
+        "nepali": "तिमीहरुलाई",
+        "english": "To many of you. plural you, "
       },
 
       {
@@ -255,7 +265,13 @@
         "type": "word",
         "transliteration": "Tapai-haru",
         "nepali": "तपाईहरु",
-        "english": "plural you, Many of you."
+        "english": "Many of you. plural you"
+      },
+      {
+        "type": "word",
+        "transliteration": "Tapai-haru-lai",
+        "nepali": "तपाईहरुलाई",
+        "english": "To many of you. plural you"
       },
       {
         "type": "word",
@@ -275,27 +291,37 @@
       },
       { "type": "subtitle", "text": "Extreme Respect" },
       {
-        "type": "word",
-        "transliteration": "Tapai",
-        "nepali": "तपाई",
-        "english": "You"
+        "type": "text",
+        "text": "Use this level of respect when communicating with the royal family or someone with the highest status. Communicating with the royal family of Nepal with this level of respect was very common when Nepal was a monarchy country. However, since the king of Nepal has been kicked out from his throne, people aren't talking with this level of respect."
       },
       {
         "type": "word",
-        "transliteration": "Tapai-haru",
-        "nepali": "तपाईहरु",
-        "english": "plural you, Many of you."
+        "transliteration": "Hajoor",
+        "nepali": "हजुर",
+        "english": "You. It has multiple meanings. It also means yes and excuse me."
       },
       {
         "type": "word",
-        "transliteration": "Tapaiko",
-        "nepali": "तपाईको",
+        "transliteration": "Hajur-haru",
+        "nepali": "हजुरहरु",
+        "english": "Many of you. plural you."
+      },
+      {
+        "type": "word",
+        "transliteration": "Hajur-haru-lai",
+        "nepali": "हजुरहरुलाई",
+        "english": "To many of you. plural you"
+      },
+      {
+        "type": "word",
+        "transliteration": "Hajurko",
+        "nepali": "हजुरको",
         "english": "Your"
       },
       {
         "type": "word",
-        "transliteration": "Tapaile",
-        "nepali": "तपाईले",
+        "transliteration": "Hajurle",
+        "nepali": "हजुरले",
         "english": "You did or Did you."
       },
 
