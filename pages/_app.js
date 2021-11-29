@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
     <ColorModeContextProvider>
       <Theme>
         <CssBaseline></CssBaseline>
-        <AppBar position="static" sx={{ margin: 0 }}>
+        <AppBar position="static">
           <Toolbar>
             <Link href="/" passHref>
               <MuiLink underline="none">
