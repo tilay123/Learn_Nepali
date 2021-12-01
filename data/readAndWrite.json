@@ -1,0 +1,61 @@
+{
+  "title": "Read and Write",
+  "description": "Learn to read and write",
+  "topics": [
+    {
+      "name": "Consonants",
+      "description": "Learn about consonants.",
+      "examples": "क ख ग ...",
+      "pages": [
+        {
+          "title": "First 5 consonants(क - ङ)",
+          "pageData": [
+            { "type": "alphabet", "alphabet": "क" },
+            { "type": "alphabet", "alphabet": "ख" },
+            { "type": "alphabet", "alphabet": "ग" },
+            { "type": "alphabet", "alphabet": "घ" },
+            { "type": "alphabet", "alphabet": "ङ" }
+          ]
+        },
+        {
+          "title": "Next 5 consonants(च - ञ)",
+          "pageData": [
+            { "type": "alphabet", "alphabet": "च" },
+            { "type": "alphabet", "alphabet": "छ" },
+            { "type": "alphabet", "alphabet": "ज" },
+            { "type": "alphabet", "alphabet": "झ" },
+            { "type": "alphabet", "alphabet": "ञ" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vowels",
+      "description": "Learn about vowels.",
+      "examples": "अ आ इ ...",
+      "topics": []
+    },
+    {
+      "name": "Diacritics || मात्रा चिनारी",
+      "description": "Learn about heavily used diacritics(मात्रा चिनारी).",
+      "examples": "ी  ु ौ ...",
+      "topics": []
+    },
+    {
+      "name": "Diacritics on Consonants",
+      "examples": "का कि की ...",
+      "topics": []
+    },
+    {
+      "name": "Special Characters",
+      "examples": "ॐ",
+      "topics": []
+    },
+    {
+      "name": "Numbers ",
+      "description": "Learn about numbers.",
+      "examples": "१ २ ३ ...",
+      "topics": []
+    }
+  ]
+}

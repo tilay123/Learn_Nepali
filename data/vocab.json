@@ -1,0 +1,27 @@
+{
+  "title": "Read and Write",
+  "description": "Learn to read and write",
+  "topics": [
+    {
+      "name": "Weather",
+      "description": "Learn about weathers.",
+      "examples": "sunny, rainy, ...",
+      "pages": [{ "title": "", "pageData": [] }, {}, {}, {}]
+    },
+    {
+      "name": "Family",
+      "description": "Learn about relationships.",
+      "example": "father, mother, ..."
+    },
+    {
+      "name": "Sickness",
+      "description": "Learn about sicknesses.",
+      "examples": "headache, cut, ..."
+    },
+    {
+      "name": "Body Parts",
+      "description": "Learn about body parts.",
+      "examples": "stomach, ear, ..."
+    }
+  ]
+}

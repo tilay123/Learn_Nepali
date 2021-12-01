@@ -161,6 +161,7 @@ export default function WriteOnCanvas() {
           userSelect: "none",
           WebkitUserDrag: "none",
           touchAction: "none", // prevent scrolling on mobile
+          cursor: "pointer",
         }}
         onMouseDown={startDrawing}
         onTouchStart={handleTouchStart}

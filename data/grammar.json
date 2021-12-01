@@ -1,0 +1,38 @@
+{
+  "title": "Read and Write",
+  "description": "Learn to read and write",
+  "topics": [
+    {
+      "name": "Verb and Verb Tenses",
+      "description": "Learn to use verbs in a sentence correctly",
+      "pages": [
+        {
+          "title": "",
+          "pageData": []
+        },
+        { "title": "", "pageData": "" },
+        {}
+      ]
+    },
+    {
+      "name": "Nouns",
+      "description": "Nouns represent person, place or things."
+    },
+    {
+      "name": "Pronouns",
+      "description": "",
+      "examples": "he, she ..."
+    },
+
+    {
+      "name": "Tenses",
+      "description": "",
+      "examples": "past, present, and future tense"
+    },
+    {
+      "name": "Postpositions",
+      "description": "Connector words that come after another word.",
+      "examples": "मा(ma), को(ko) ..."
+    }
+  ]
+}
