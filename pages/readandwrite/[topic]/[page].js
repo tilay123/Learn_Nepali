@@ -16,6 +16,7 @@ import Footer from "../../../components/Footer";
 import ExampleText from "../../../components/displayText/ExampleText";
 import TableE from "../../../components/displayText/TableE";
 import { useRouter } from "next/router";
+import Displayer from "../../../helper/Displayer";
 
 export default function ReadAndWrite({ pageContent, links }) {
   console.log("page Content", pageContent);
@@ -60,9 +61,9 @@ export default function ReadAndWrite({ pageContent, links }) {
           <Typography variant="h3" fontWeight="700" sx={{ mb: 6 }}>
             {pageContent.title}
           </Typography>
-
-          <div>Hello</div>
-          <div>Hello2 conrainer</div>
+          {pageContent.pageData.map((pageData, index) => (
+            <Displayer key={index} data={pageData}></Displayer>
+          ))}
         </Container>
       </Box>
 

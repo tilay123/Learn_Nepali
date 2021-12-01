@@ -9,6 +9,7 @@ import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import { useState } from "react";
 import Container from "@mui/material/Container";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Link from "next/link";
 const LessonCard = ({ title, description, cardDataList, id }) => {
   const linearGradient = [
     ["#10ace0", "#1055e0"],
@@ -17,6 +18,8 @@ const LessonCard = ({ title, description, cardDataList, id }) => {
   ];
 
   const matches = useMediaQuery("(min-width:300px)");
+
+  const oneLineText = (str) => str.toLocaleLowerCase().split(" ").join("");
 
   const width = matches ? { width: "100%" } : {};
 
@@ -63,10 +66,10 @@ const LessonCard = ({ title, description, cardDataList, id }) => {
                 sx={{
                   // width: 300,
                   // minHeight: 250,
-                  width: 300,
+                  width: 240,
                   minHeight: 250,
                   mt: 2,
-                  mx: 2,
+                  mx: 1,
                 }}
               >
                 <Box
@@ -98,7 +101,16 @@ const LessonCard = ({ title, description, cardDataList, id }) => {
                   )}
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Learn</Button>
+                  <Link
+                    href={`/${oneLineText(title)}/${oneLineText(
+                      element.name
+                    )}/1`}
+                    passHref
+                  >
+                    <Button size="small" component="a">
+                      Learn
+                    </Button>
+                  </Link>
                   <Button size="small">Take a Quiz</Button>
                 </CardActions>
               </Card>

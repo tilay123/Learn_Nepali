@@ -5,7 +5,10 @@ import Button from "@mui/material/Button";
 import { HexColorPicker } from "react-colorful";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
-export default function WriteOnCanvas() {
+export default function WriteOnCanvas({ small = false }) {
+  if (small) {
+    console.log("Small canvas");
+  }
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
 
@@ -23,15 +26,17 @@ export default function WriteOnCanvas() {
     //to support screens with higher screen density like Mac OS with Retina Screen we need to double the
     // pixel density.
 
-    var width =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
+    var width = small
+      ? 250
+      : window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
 
-    var height =
-      window.innerHeight ||
-      document.documentElement.clientHeight ||
-      document.body.clientHeight;
+    var height = small
+      ? 250
+      : window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight;
 
     canvas.width = width * 2;
     canvas.height = height * 2;
@@ -102,7 +107,7 @@ export default function WriteOnCanvas() {
     console.log("draw");
   };
   return (
-    <Box sx={{ width: "100%", height: "100%" }}>
+    <Box>
       <Button
         sx={{ position: "absolute", ml: 1, mt: 1 }}
         variant="outlined"
@@ -122,11 +127,11 @@ export default function WriteOnCanvas() {
       <div
         onClick={() => setDialogIsOpen(!dialogIsOpen)}
         style={{
-          height: "30px",
+          height: "32px",
           width: "30px",
           position: "absolute",
-          marginTop: "50px",
-          marginLeft: "10px",
+          marginTop: "10px",
+          marginLeft: "120px",
           backgroundColor: `${color}`,
         }}
       ></div>

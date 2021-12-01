@@ -3,6 +3,7 @@ import Word from "../components/displayText/Word";
 import RespectTable from "../components/displayText/RespectTable";
 import ExampleText from "../components/displayText/ExampleText";
 import TableE from "../components/displayText/TableE";
+import Alphabet from "../components/displayText/Alphabet";
 export default function Displayer({ data }) {
   switch (data.type) {
     case "word":
@@ -22,6 +23,8 @@ export default function Displayer({ data }) {
       return <TableE exampleRows={data.data}></TableE>;
     case "example":
       return <ExampleText example={data} />;
+    case "alphabet":
+      return <Alphabet data={data} />;
     default:
       return <Typography>{"Data can't be displayed."}</Typography>;
   }
