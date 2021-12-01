@@ -1,8 +1,9 @@
 import path from "path";
 import fs from "fs";
 
-export default function ReadAndWrite({ pageContent }) {
+export default function ReadAndWrite({ pageContent, links }) {
   console.log("page Content", pageContent);
+  console.log("links", links);
   return <div>Read and and write</div>;
 }
 
@@ -39,6 +40,11 @@ export async function getStaticProps({ params }) {
       notFound: true,
     };
 
+  const pageTitles = content.pages.map((pg, index) => ({
+    title: pg.title,
+    url: decodeURIComponent(`/readandwrite/${topic}/${index + 1}`),
+  }));
+
   content = content.pages[Number(page) - 1];
 
   console.log(`"topic-Props: ", ${topic} content: ${content} page:${page}`);
@@ -46,6 +52,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       pageContent: content,
+      links: pageTitles,
     },
     revalidate: false,
   };
