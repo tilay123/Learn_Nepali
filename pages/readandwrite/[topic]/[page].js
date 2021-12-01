@@ -1,10 +1,74 @@
 import path from "path";
 import fs from "fs";
+import Container from "@mui/material/Container";
+import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import List from "@mui/material/List";
+import Typography from "@mui/material/Typography";
+import { useState } from "react";
+import { Link as MuiLink } from "@mui/material";
+import Link from "next/link";
+import Word from "../../../components/displayText/Word";
+import RespectTable from "../../../components/displayText/RespectTable";
+import Footer from "../../../components/Footer";
+import ExampleText from "../../../components/displayText/ExampleText";
+import TableE from "../../../components/displayText/TableE";
+import { useRouter } from "next/router";
 
 export default function ReadAndWrite({ pageContent, links }) {
   console.log("page Content", pageContent);
   console.log("links", links);
-  return <div>Read and and write</div>;
+  return (
+    <>
+      <Box sx={{ flex: "1", display: { xs: "flex", sm: "none" }, mr: 2 }}>
+        <IconButton sx={{ ml: "auto" }}>
+          <MenuIcon />
+        </IconButton>
+      </Box>
+
+      <Box sx={{ flexDirection: "row", display: "flex" }}>
+        <Paper
+          sx={{
+            width: 300,
+            m: 1,
+            height: "100%",
+
+            display: { xs: "none", sm: "block" },
+          }}
+        >
+          <List component="nav" sx={{ position: "fixed" }} aria-label="\">
+            <Box
+              sx={{ display: "flex", flexDirection: "column", pl: 2, pt: 2 }}
+            >
+              <Typography fontWeight="700">Table of Contents</Typography>
+
+              {links.map((link, index) => (
+                <Link
+                  key={link.title}
+                  href={decodeURIComponent(link.url)}
+                  passHref
+                >
+                  <MuiLink>{`${index + 1}. ${link.title}`}</MuiLink>
+                </Link>
+              ))}
+            </Box>
+          </List>
+        </Paper>
+        <Container sx={{ mt: 1 }}>
+          <Typography variant="h3" fontWeight="700" sx={{ mb: 6 }}>
+            {pageContent.title}
+          </Typography>
+
+          <div>Hello</div>
+          <div>Hello2 conrainer</div>
+        </Container>
+      </Box>
+
+      <Footer></Footer>
+    </>
+  );
 }
 
 const getUrlFromTitle = (lessonPath, pathName) =>
@@ -42,7 +106,7 @@ export async function getStaticProps({ params }) {
 
   const pageTitles = content.pages.map((pg, index) => ({
     title: pg.title,
-    url: decodeURIComponent(`/readandwrite/${topic}/${index + 1}`),
+    url: encodeURIComponent(`/readandwrite/${topic}/${index + 1}`),
   }));
 
   content = content.pages[Number(page) - 1];
