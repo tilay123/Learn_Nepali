@@ -26,30 +26,169 @@
             { "type": "alphabet", "alphabet": "झ" },
             { "type": "alphabet", "alphabet": "ञ" }
           ]
+        },
+        {
+          "title": "Next 5 consonants(ट - ण)",
+          "pageData": [
+            { "type": "alphabet", "alphabet": "ट" },
+            { "type": "alphabet", "alphabet": "ठ" },
+            { "type": "alphabet", "alphabet": "ड" },
+            { "type": "alphabet", "alphabet": "ढ" },
+            { "type": "alphabet", "alphabet": "ण" }
+          ]
+        },
+        {
+          "title": "Next 5 consonants(त - न)",
+          "pageData": [
+            { "type": "alphabet", "alphabet": "त" },
+            { "type": "alphabet", "alphabet": "थ" },
+            { "type": "alphabet", "alphabet": "द" },
+            { "type": "alphabet", "alphabet": "ध" },
+            { "type": "alphabet", "alphabet": "न" }
+          ]
+        },
+        {
+          "title": "Next 5 consonants(प - म)",
+          "pageData": [
+            { "type": "alphabet", "alphabet": "प" },
+            { "type": "alphabet", "alphabet": "फ" },
+            { "type": "alphabet", "alphabet": "ब" },
+            { "type": "alphabet", "alphabet": "भ" },
+            { "type": "alphabet", "alphabet": "म" }
+          ]
+        },
+        {
+          "title": "Next 5 consonants(य - श)",
+          "pageData": [
+            { "type": "alphabet", "alphabet": "य" },
+            { "type": "alphabet", "alphabet": "र" },
+            { "type": "alphabet", "alphabet": "ल" },
+            { "type": "alphabet", "alphabet": "व" },
+            { "type": "alphabet", "alphabet": "श" }
+          ]
+        },
+        {
+          "title": "Last 6 consonants(ष - ज्ञ)",
+          "pageData": [
+            { "type": "alphabet", "alphabet": "ष" },
+            { "type": "alphabet", "alphabet": "स" },
+            { "type": "alphabet", "alphabet": "ह" },
+            { "type": "alphabet", "alphabet": "क्ष" },
+            { "type": "alphabet", "alphabet": "त्र" },
+            { "type": "alphabet", "alphabet": "ज्ञ" }
+          ]
+        },
+        {
+          "title": "All Consonants",
+          "pageData": [
+            {
+              "type": "tableA",
+              "title": "All Consonants(क - ज्ञ)",
+              "data": [
+                ["क", "ख", "ग", "घ", "ङ"],
+                ["च", "छ", "ज", "झ", "ञ"],
+                ["ट", "ठ", "ड", "ढ", "ण"],
+                ["त", "थ", "द", "ध", "न"],
+                ["प", "फ", "ब", "भ", "म"],
+                ["य", "र", "ल", "व", "श"],
+                ["ष", "स", "ह", "क्ष", "त्र"],
+                ["ज्ञ"]
+              ]
+            }
+          ]
         }
       ]
     },
     {
-      "name": "Vowels",
+      "name": "Vowels and Diacritics",
       "description": "Learn about vowels.",
       "examples": "अ आ इ ...",
-      "topics": []
-    },
-    {
-      "name": "Diacritics",
-      "description": "Learn about heavily used diacritics(मात्रा चिनारी).",
-      "examples": "ी  ु ौ ...",
-      "topics": []
+      "pages": [
+        {
+          "title": "Diacritics",
+          "pageData": [
+            { "type": "alphabet", "alphabet": "ा" },
+            { "type": "alphabet", "alphabet": "ि" },
+            { "type": "alphabet", "alphabet": "ी" },
+            { "type": "alphabet", "alphabet": "ु" },
+            { "type": "alphabet", "alphabet": "ू" },
+            { "type": "alphabet", "alphabet": "े" },
+            { "type": "alphabet", "alphabet": "ै" },
+            { "type": "alphabet", "alphabet": "ो" },
+            { "type": "alphabet", "alphabet": "ौ" },
+            { "type": "alphabet", "alphabet": "ं" },
+            { "type": "alphabet", "alphabet": "ः" },
+            { "type": "alphabet", "alphabet": "्" },
+            { "type": "alphabet", "alphabet": "ृ" },
+            { "type": "alphabet", "alphabet": "ँ" }
+          ]
+        },
+        {
+          "title": "Diacritics in a Table",
+          "pageData": [
+            {
+              "type": "tableA",
+              "title": "All Vowels(अ - अ:)",
+
+              "data": [
+                ["ा", "ि", "ी", "ु", "ू", "े", "ै", "ो", "ौ", "ं", "ः"],
+                ["्", "ृ", "ँ"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "title": "First 4 vowels(अ - ई)",
+          "pageData": [
+            { "type": "alphabet", "alphabet": "अ" },
+            { "type": "alphabet", "alphabet": "आ" },
+            { "type": "alphabet", "alphabet": "इ" },
+            { "type": "alphabet", "alphabet": "ई" }
+          ]
+        },
+        {
+          "title": "Next 4 vowels(उ - ऐ)",
+          "pageData": [
+            { "type": "alphabet", "alphabet": "उ" },
+            { "type": "alphabet", "alphabet": "ऊ" },
+            { "type": "alphabet", "alphabet": "ए" },
+            { "type": "alphabet", "alphabet": "ऐ" }
+          ]
+        },
+        {
+          "title": "Last 4 vowels(ओ - अ:)",
+          "pageData": [
+            { "type": "alphabet", "alphabet": "ओ" },
+            { "type": "alphabet", "alphabet": "औ" },
+            { "type": "alphabet", "alphabet": "अं" },
+            { "type": "alphabet", "alphabet": "अ:" }
+          ]
+        },
+        {
+          "title": "All Vowels",
+          "pageData": [
+            {
+              "type": "tableA",
+              "title": "All Vowels(अ - अ:)",
+
+              "data": [
+                ["अ", "आ", "इ", "ई", "उ", "ऊ", "ए", "ऐ", "ओ", "औ", "अं", "अ:"]
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Diacritics on Consonants",
       "examples": "का कि की ...",
-      "topics": []
+      "pages": []
     },
     {
       "name": "Special Characters",
       "examples": "ॐ",
-      "topics": []
+      "pages": []
     },
     {
       "name": "Numbers ",

@@ -7,20 +7,14 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
 import { Link as MuiLink } from "@mui/material";
 import Link from "next/link";
-import Word from "../../../components/displayText/Word";
-import RespectTable from "../../../components/displayText/RespectTable";
 import Footer from "../../../components/Footer";
-import ExampleText from "../../../components/displayText/ExampleText";
-import TableE from "../../../components/displayText/TableE";
-import { useRouter } from "next/router";
 import Displayer from "../../../helper/Displayer";
 
 export default function ReadAndWrite({ pageContent, links }) {
-  console.log("page Content", pageContent);
-  console.log("links", links);
+  // console.log("page Content", pageContent);
+  // console.log("links", links);
   return (
     <>
       <Box sx={{ flex: "1", display: { xs: "flex", sm: "none" }, mr: 2 }}>
@@ -100,7 +94,11 @@ export async function getStaticProps({ params }) {
     };
   }
 
-  if (isNaN(page) || content.pages[Number(page) - 1] == null)
+  if (
+    isNaN(page) ||
+    content?.pages == null ||
+    content.pages[Number(page) - 1] == null
+  )
     return {
       notFound: true,
     };

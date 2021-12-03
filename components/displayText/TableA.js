@@ -1,6 +1,5 @@
-// Table for Example sentences
+// Table for Alphabets
 import PropTypes from "prop-types";
-import * as React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -8,7 +7,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Typography } from "@mui/material";
-
 export default function TableE({ exampleRows }) {
   // Table for Examples
   return (
@@ -16,7 +14,7 @@ export default function TableE({ exampleRows }) {
       <TableContainer sx={{ mt: 3, mb: 1 }} component={Paper}>
         <Table
           sx={{
-            minWidth: 20,
+            minWidth: 40,
             maxWidth: 300,
           }}
           aria-label="table"
@@ -31,7 +29,12 @@ export default function TableE({ exampleRows }) {
               >
                 {row.map((str, idx) => (
                   <TableCell key={idx}>
-                    <Typography key={idx}>{str}</Typography>
+                    <Typography
+                      key={idx}
+                      sx={{ fontSize: 28, fontWeight: "600" }}
+                    >
+                      {str}
+                    </Typography>
                   </TableCell>
                 ))}
               </TableRow>

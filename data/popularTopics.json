@@ -9,14 +9,9 @@
         "examples": "क ख ग ..."
       },
       {
-        "name": "Vowels",
+        "name": "Vowels and Diacritics",
         "description": "Learn about vowels.",
         "examples": "अ आ इ ..."
-      },
-      {
-        "name": "Diacritics",
-        "description": "Learn about heavily used diacritics(मात्रा चिनारी).",
-        "examples": "ी  ु ौ ..."
       },
       {
         "name": "Diacritics on Consonants",
