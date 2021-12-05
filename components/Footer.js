@@ -22,7 +22,7 @@ const Footer = () => {
           <Link href="#">FAQ</Link>
         </Box>
 
-        <Box sx={{ display: "flex", flexDirection: "column", mx: 3 }}>
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
           <Typography fontWeight="700">Features</Typography>
           <Link href="#">Read&amp;Write</Link>
           <Link href="#">Vocabulary</Link>

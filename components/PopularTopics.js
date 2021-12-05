@@ -16,8 +16,8 @@ const PopularTopics = () => {
     <>
       <Card
         sx={{
-          minWidth: 300,
-          maxWidth: 600,
+          minWidth: 240,
+          maxWidth: "50%",
           mt: 2,
           mx: 4,
           justifyContent: "center",

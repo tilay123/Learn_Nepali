@@ -20,7 +20,7 @@ export default function RespectTable({ data }) {
         {data.description1}
       </Typography>
 
-      <TableContainer sx={{ mb: 3 }} component={Paper}>
+      <TableContainer sx={{ mb: 3, minWidth: 240 }} component={Paper}>
         <Table sx={{ minWidth: 20 }} aria-label="table">
           <TableHead>
             <TableRow>

@@ -181,9 +181,19 @@
       ]
     },
     {
-      "name": "Diacritics on Consonants",
+      "name": "Consonants and Diacritics",
       "examples": "का कि की ...",
-      "pages": []
+      "pages": [
+        {
+          "title": "Consonants and Diacritics Table",
+          "pageData": [
+            {
+              "type": "tableACD",
+              "title": "Diacritics Table"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Special Characters",

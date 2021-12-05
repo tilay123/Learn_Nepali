@@ -57,7 +57,7 @@ export default function WriteOnCanvas({ small = false }) {
     context.strokeStyle = "tomato";
     context.lineWidth = 10;
     contextRef.current = context;
-  }, []);
+  }, [small]);
 
   const startDrawing = ({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;

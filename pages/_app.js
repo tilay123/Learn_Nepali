@@ -12,8 +12,8 @@ function MyApp({ Component, pageProps }) {
     <ColorModeContextProvider>
       <Theme>
         <CssBaseline></CssBaseline>
-        <AppBar position="static">
-          <Toolbar>
+        <AppBar position="static" sx={{ ml: 0, mr: 0 }}>
+          <Toolbar sx={{ ml: 0, mr: 0 }}>
             <Link href="/" passHref>
               <MuiLink underline="none">
                 <Typography variant="h5" component="div" color="white">

@@ -5,6 +5,7 @@ import ExampleText from "../components/displayText/ExampleText";
 import TableE from "../components/displayText/TableE";
 import TableA from "../components/displayText/TableA";
 import Alphabet from "../components/displayText/Alphabet";
+import TableACD from "../components/displayText/TableACD";
 export default function Displayer({ data }) {
   switch (data.type) {
     case "word":
@@ -24,6 +25,8 @@ export default function Displayer({ data }) {
       return <TableE exampleRows={data.data}></TableE>;
     case "tableA":
       return <TableA exampleRows={data.data}></TableA>;
+    case "tableACD":
+      return <TableACD />;
     case "example":
       return <ExampleText example={data} />;
     case "alphabet":

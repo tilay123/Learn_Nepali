@@ -11,55 +11,104 @@ import { Link as MuiLink } from "@mui/material";
 import Link from "next/link";
 import Footer from "../../../components/Footer";
 import Displayer from "../../../helper/Displayer";
+import { useState } from "react";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
 export default function ReadAndWrite({ pageContent, links }) {
   // console.log("page Content", pageContent);
   // console.log("links", links);
+  const [dialogIsOpen, setDialogIsOpen] = useState(false);
+
+  const toggleDrawer = () => setDialogIsOpen(!dialogIsOpen);
+
+  const getLinks = () => (
+    <Paper sx={{ m: 1, p: 2 }}>
+      {links.map((link, index) => (
+        <Link key={link.title} href={decodeURIComponent(link.url)} passHref>
+          <MuiLink
+            sx={{ p: 0.5, display: "block" }}
+            onClick={() => {
+              if (dialogIsOpen) setDialogIsOpen(false);
+            }}
+          >{`${index + 1}. ${link.title}`}</MuiLink>
+        </Link>
+      ))}
+    </Paper>
+  );
+
   return (
     <>
-      <Box sx={{ flex: "1", display: { xs: "flex", sm: "none" }, mr: 2 }}>
-        <IconButton sx={{ ml: "auto" }}>
-          <MenuIcon />
+      <Box
+        sx={{
+          display: { xs: "flex", md: "none" },
+          mr: 2,
+          mt: 1,
+        }}
+      >
+        <IconButton sx={{ ml: "auto" }} onClick={toggleDrawer}>
+          <MenuIcon fontSize="large" />
         </IconButton>
-      </Box>
-
-      <Box sx={{ flexDirection: "row", display: "flex" }}>
-        <Paper
-          sx={{
-            width: 300,
-            m: 1,
-            height: "100%",
-
-            display: { xs: "none", sm: "block" },
-          }}
+        <SwipeableDrawer
+          anchor="left"
+          open={dialogIsOpen}
+          onClose={toggleDrawer}
+          onOpen={toggleDrawer}
         >
-          <List component="nav" sx={{ position: "fixed" }} aria-label="\">
-            <Box
-              sx={{ display: "flex", flexDirection: "column", pl: 2, pt: 2 }}
-            >
-              <Typography fontWeight="700">Table of Contents</Typography>
-
-              {links.map((link, index) => (
-                <Link
-                  key={link.title}
-                  href={decodeURIComponent(link.url)}
-                  passHref
-                >
-                  <MuiLink>{`${index + 1}. ${link.title}`}</MuiLink>
-                </Link>
-              ))}
-            </Box>
-          </List>
-        </Paper>
-        <Container sx={{ mt: 1 }}>
-          <Typography variant="h3" fontWeight="700" sx={{ mb: 6 }}>
-            {pageContent.title}
-          </Typography>
-          {pageContent.pageData.map((pageData, index) => (
-            <Displayer key={index} data={pageData}></Displayer>
-          ))}
-        </Container>
+          <Box sx={{ width: 240, backgroundColor: "background", pt: 5 }}>
+            <Typography sx={{ pl: 2, pt: 2 }} component="span" fontWeight="700">
+              Table of Contents
+            </Typography>
+            {getLinks()}
+          </Box>
+        </SwipeableDrawer>
       </Box>
+
+      <Box
+        sx={{
+          width: "30%",
+
+          //height: "100%",
+          flexWrap: "wrap",
+          display: { xs: "none", sm: "flex" },
+        }}
+      >
+        <List
+          component="nav"
+          sx={{ position: "fixed", display: "flex", m: 1 }}
+          aria-label="\"
+        >
+          <Box
+            sx={{
+              display: { sm: "none", md: "flex" },
+              flexDirection: "column",
+              pl: 2,
+              pt: 2,
+              mt: 4,
+            }}
+          >
+            <Typography sx={{ pl: 2, pt: 2 }} component="span" fontWeight="700">
+              Table of Contents
+            </Typography>
+
+            {getLinks()}
+          </Box>
+        </List>
+      </Box>
+      <Container
+        sx={{
+          mt: 1,
+          ml: { xs: 0, md: "300px" },
+          mx: 0,
+          width: { sm: "100%", md: "70%" },
+        }}
+      >
+        <Typography fontWeight="700" sx={{ mb: 6, fontSize: "2rem" }}>
+          {pageContent.title}
+        </Typography>
+        {pageContent.pageData.map((pageData, index) => (
+          <Displayer key={index} data={pageData}></Displayer>
+        ))}
+      </Container>
 
       <Footer></Footer>
     </>

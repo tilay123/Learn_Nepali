@@ -11,7 +11,10 @@ export default function TableE({ exampleRows }) {
   // Table for Examples
   return (
     <>
-      <TableContainer sx={{ mt: 3, mb: 1 }} component={Paper}>
+      <TableContainer
+        sx={{ mt: 3, mb: 1, mx: 0, minWidth: 240 }}
+        component={Paper}
+      >
         <Table
           sx={{
             minWidth: 40,
@@ -31,7 +34,7 @@ export default function TableE({ exampleRows }) {
                   <TableCell key={idx}>
                     <Typography
                       key={idx}
-                      sx={{ fontSize: 28, fontWeight: "600" }}
+                      sx={{ fontSize: 20, fontWeight: "400" }}
                     >
                       {str}
                     </Typography>
