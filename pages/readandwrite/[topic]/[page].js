@@ -13,16 +13,20 @@ import Footer from "../../../components/Footer";
 import Displayer from "../../../helper/Displayer";
 import { useState } from "react";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import Button from "@mui/material/Button";
 
-export default function ReadAndWrite({ pageContent, links }) {
+export default function ReadAndWrite({ pageContent, links, currentPageIndex }) {
   // console.log("page Content", pageContent);
-  // console.log("links", links);
+  console.log(
+    `currentPageIndex:${currentPageIndex} len:${links.length} links`
+    // links
+  );
   const [dialogIsOpen, setDialogIsOpen] = useState(false);
 
   const toggleDrawer = () => setDialogIsOpen(!dialogIsOpen);
 
   const getLinks = () => (
-    <Paper sx={{ m: 1, p: 2 }}>
+    <Paper sx={{ m: { xs: 0, sm: 2 }, p: 1 }}>
       {links.map((link, index) => (
         <Link key={link.title} href={decodeURIComponent(link.url)} passHref>
           <MuiLink
@@ -108,6 +112,39 @@ export default function ReadAndWrite({ pageContent, links }) {
         {pageContent.pageData.map((pageData, index) => (
           <Displayer key={index} data={pageData}></Displayer>
         ))}
+
+        <Box sx={{ width: "100%", display: "flex", mt: 4 }}>
+          <Link
+            href={`${decodeURIComponent(
+              links[currentPageIndex - 1]?.url ?? "#"
+            )}`}
+            passHref
+          >
+            <Button
+              sx={{ flexGrow: 1, mr: 1 }}
+              variant="outlined"
+              component="a"
+              disabled={currentPageIndex < 1}
+            >
+              Previous
+            </Button>
+          </Link>
+          <Link
+            href={`${decodeURIComponent(
+              links[currentPageIndex + 1]?.url ?? "#"
+            )}`}
+            passHref
+          >
+            <Button
+              sx={{ flexGrow: 1 }}
+              component="a"
+              variant="outlined"
+              disabled={currentPageIndex + 2 > links.length}
+            >
+              Next
+            </Button>
+          </Link>
+        </Box>
       </Container>
 
       <Footer></Footer>
@@ -165,6 +202,7 @@ export async function getStaticProps({ params }) {
     props: {
       pageContent: content,
       links: pageTitles,
+      currentPageIndex: Number(page) - 1,
     },
     revalidate: false,
   };

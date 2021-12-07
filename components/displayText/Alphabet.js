@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 export default function Alphabet({ data }) {
   return (
-    <Box sx={{ m: 2, p: 2 }}>
+    <Box sx={{ m: { xs: 0, sm: 2 }, p: { xs: 0, sm: 2 } }}>
       <Typography variant="h3">{data.alphabet}</Typography>
       <WriteOnCanvas small></WriteOnCanvas>
 

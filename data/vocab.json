@@ -6,22 +6,25 @@
       "name": "Weather",
       "description": "Learn about weathers.",
       "examples": "sunny, rainy, ...",
-      "pages": [{ "title": "", "pageData": [] }, {}, {}, {}]
+      "pages": [{ "title": "", "pageData": [] }]
     },
     {
       "name": "Family",
       "description": "Learn about relationships.",
-      "example": "father, mother, ..."
+      "example": "father, mother, ...",
+      "pages": [{ "title": "", "pageData": [] }]
     },
     {
       "name": "Sickness",
       "description": "Learn about sicknesses.",
-      "examples": "headache, cut, ..."
+      "examples": "headache, cut, ...",
+      "pages": [{ "title": "", "pageData": [] }]
     },
     {
       "name": "Body Parts",
       "description": "Learn about body parts.",
-      "examples": "stomach, ear, ..."
+      "examples": "stomach, ear, ...",
+      "pages": [{ "title": "", "pageData": [] }]
     }
   ]
 }

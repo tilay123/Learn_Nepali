@@ -17,7 +17,7 @@ const LessonCard = ({ title, description, cardDataList, id }) => {
     ["#81B622", "#59981A"],
   ];
 
-  const matches = useMediaQuery("(min-width:300px)");
+  const matches = useMediaQuery("(min-width:250px)");
 
   const oneLineText = (str) => str.toLocaleLowerCase().split(" ").join("");
 

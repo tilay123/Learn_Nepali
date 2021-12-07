@@ -124,7 +124,7 @@
           ]
         },
         {
-          "title": "Diacritics in a Table",
+          "title": "Diacritics Table",
           "pageData": [
             {
               "type": "tableA",
@@ -196,15 +196,27 @@
       ]
     },
     {
-      "name": "Special Characters",
-      "examples": "ॐ",
-      "pages": []
-    },
-    {
       "name": "Numbers ",
       "description": "Learn about numbers.",
       "examples": "१ २ ३ ...",
-      "topics": []
+      "pages": [
+        {
+          "title": "Numbers (0-10)",
+          "pageData": [
+            { "type": "alphabet", "alphabet": "०", "english": 0 },
+            { "type": "alphabet", "alphabet": "१", "english": 1 },
+            { "type": "alphabet", "alphabet": "२", "english": 2 },
+            { "type": "alphabet", "alphabet": "३", "english": 3 },
+            { "type": "alphabet", "alphabet": "४", "english": 4 },
+            { "type": "alphabet", "alphabet": "५", "english": 5 },
+            { "type": "alphabet", "alphabet": "६", "english": 6 },
+            { "type": "alphabet", "alphabet": "७", "english": 7 },
+            { "type": "alphabet", "alphabet": "८", "english": 8 },
+            { "type": "alphabet", "alphabet": "९", "english": 9 },
+            { "type": "alphabet", "alphabet": "१०", "english": 10 }
+          ]
+        }
+      ]
     }
   ]
 }
