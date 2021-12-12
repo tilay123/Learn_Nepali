@@ -6,13 +6,12 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
-import { useContext } from "react";
 import Container from "@mui/material/Container";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { AuthContext } from "../context/AuthContext";
-const LessonCard = ({ title, description, cardDataList, id }) => {
+
+import AuthDialog from "./AuthDialogContent";
+const LessonCard = ({ title, description, cardDataList, id, handleRoute }) => {
   const linearGradient = [
     ["#10ace0", "#1055e0"],
     ["#B22F72", "#8A1C7C"],
@@ -20,9 +19,7 @@ const LessonCard = ({ title, description, cardDataList, id }) => {
   ];
   // displaying lesson Cards ex:{Read and Write + card details}
 
-  const router = useRouter();
   const matches = useMediaQuery("(min-width:250px)");
-  const { state } = useContext(AuthContext);
 
   const oneLineText = (str) => str.toLocaleLowerCase().split(" ").join("");
 
@@ -77,13 +74,11 @@ const LessonCard = ({ title, description, cardDataList, id }) => {
                   mx: 1,
                   cursor: "pointer",
                 }}
-                onClick={() => {
-                  console.log("Card Clicked; user:", state.user);
-
-                  router.replace(
+                onClick={() =>
+                  handleRoute(
                     `/${oneLineText(title)}/${oneLineText(element.name)}/1`
-                  );
-                }}
+                  )
+                }
               >
                 <Box
                   sx={{

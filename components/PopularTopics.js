@@ -10,8 +10,21 @@ import Footer from "../components/Footer";
 import Divider from "@mui/material/Divider";
 import Link from "next/link";
 const jsonData = require("../data/popularTopics.json");
+import { AuthContext } from "../context/AuthContext";
+import Dialog from "@mui/material/Dialog";
+import { useContext, useState } from "react";
+import AuthDialogContent from "./AuthDialogContent";
+import { useRouter } from "next/router";
+
 // eslint-disable-next-line
 const PopularTopics = () => {
+  const { state } = useContext(AuthContext);
+  const [authDialogIsOpen, setAuthDialogIsOpen] = useState(false);
+
+  const router = useRouter();
+
+  const toggleDialog = () => setAuthDialogIsOpen(!authDialogIsOpen);
+
   return (
     <>
       <Card
@@ -59,8 +72,26 @@ const PopularTopics = () => {
           description={topic.description}
           cardDataList={topic.data}
           id={index}
+          handleRoute={(url) => {
+            console.log("URLLL", url);
+            if (state.user) {
+              console.log("User logged in");
+              router.replace(url);
+            } else {
+              console.log("User NOT logged in");
+              toggleDialog();
+            }
+          }}
         ></LessonCard>
       ))}
+      <Dialog
+        open={authDialogIsOpen}
+        onClose={toggleDialog}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <AuthDialogContent toggleDialog={toggleDialog} />
+      </Dialog>
 
       <Footer></Footer>
     </>

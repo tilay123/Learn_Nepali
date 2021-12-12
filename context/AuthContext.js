@@ -8,7 +8,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
-const initialState = { user: "I am a user", error: null };
+const initialState = { user: null, error: null };
 
 export const AuthContext = createContext(initialState);
 const auth = getAuth(app);
