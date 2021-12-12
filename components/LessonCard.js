@@ -10,13 +10,16 @@ import { useState } from "react";
 import Container from "@mui/material/Container";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Link from "next/link";
+import { useRouter } from "next/router";
 const LessonCard = ({ title, description, cardDataList, id }) => {
   const linearGradient = [
     ["#10ace0", "#1055e0"],
     ["#B22F72", "#8A1C7C"],
     ["#81B622", "#59981A"],
   ];
+  // displaying lesson Cards ex:{Read and Write + card details}
 
+  const router = useRouter();
   const matches = useMediaQuery("(min-width:250px)");
 
   const oneLineText = (str) => str.toLocaleLowerCase().split(" ").join("");
@@ -70,6 +73,13 @@ const LessonCard = ({ title, description, cardDataList, id }) => {
                   minHeight: 250,
                   mt: 2,
                   mx: 1,
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  console.log("Clicked card");
+                  router.replace(
+                    `/${oneLineText(title)}/${oneLineText(element.name)}/1`
+                  );
                 }}
               >
                 <Box
@@ -100,7 +110,7 @@ const LessonCard = ({ title, description, cardDataList, id }) => {
                     </Typography>
                   )}
                 </CardContent>
-                <CardActions>
+                {/* <CardActions>
                   <Link
                     href={`/${oneLineText(title)}/${oneLineText(
                       element.name
@@ -111,8 +121,7 @@ const LessonCard = ({ title, description, cardDataList, id }) => {
                       Learn
                     </Button>
                   </Link>
-                  <Button size="small">Take a Quiz</Button>
-                </CardActions>
+                </CardActions> */}
               </Card>
             </Grid>
           );

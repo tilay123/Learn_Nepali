@@ -29,11 +29,6 @@
     "description": "Learn new words",
     "data": [
       {
-        "name": "Weather",
-        "description": "Learn about weathers.",
-        "examples": "sunny, rainy, ..."
-      },
-      {
         "name": "Family",
         "description": "Learn about relationships.",
         "example": "father, mother, ..."
@@ -47,6 +42,11 @@
         "name": "Body Parts",
         "description": "Learn about body parts.",
         "examples": "stomach, ear, ..."
+      },
+      {
+        "name": "Weather",
+        "description": "Learn about weathers.",
+        "examples": "sunny, rainy, ..."
       }
     ]
   },

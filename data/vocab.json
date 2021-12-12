@@ -3,16 +3,48 @@
   "description": "Learn to read and write",
   "topics": [
     {
-      "name": "Weather",
-      "description": "Learn about weathers.",
-      "examples": "sunny, rainy, ...",
-      "pages": [{ "title": "", "pageData": [] }]
-    },
-    {
       "name": "Family",
       "description": "Learn about relationships.",
       "example": "father, mother, ...",
-      "pages": [{ "title": "", "pageData": [] }]
+      "pages": [{ "title": "", "pageData": [] }],
+      "questions": [
+        {
+          "type": "word",
+          "id": "7c5c190e",
+          "question": "मामा",
+          "options": [
+            { "eng": "Uncle on mother's side" },
+            { "eng": "Uncle on fathers's side" },
+            { "eng": "Brother" },
+            { "eng": "Sister" }
+          ],
+          "correct": "Uncle on mother's side",
+          "image": "#",
+          "audio": "/assets/mama.mp3"
+        },
+        {
+          "type": "word",
+          "id": "a9a4abd6",
+          "question": "काका",
+          "options": [
+            {
+              "type": "word",
+              "id": "sdf",
+              "question": "काका",
+              "options": [
+                { "eng": "Uncle on mother's side" },
+                { "eng": "Uncle on fathers's side" },
+                { "eng": "Brother" },
+                { "eng": "Sister" }
+              ]
+            }
+          ],
+          "correct": "Uncle on fathers's side",
+          "image": "#",
+          "audio": "/assets/kaka.mp3",
+          "description": ""
+        }
+      ]
     },
     {
       "name": "Sickness",
@@ -24,6 +56,12 @@
       "name": "Body Parts",
       "description": "Learn about body parts.",
       "examples": "stomach, ear, ...",
+      "pages": [{ "title": "", "pageData": [] }]
+    },
+    {
+      "name": "Weather",
+      "description": "Learn about weathers.",
+      "examples": "sunny, rainy, ...",
       "pages": [{ "title": "", "pageData": [] }]
     }
   ]

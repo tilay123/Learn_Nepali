@@ -1,27 +1,97 @@
 import path from "path";
 import fs from "fs";
 import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import List from "@mui/material/List";
+import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { Link as MuiLink } from "@mui/material";
 import Link from "next/link";
 import Footer from "../../../components/Footer";
 import Displayer from "../../../helper/Displayer";
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
-
+import { styled } from "@mui/material/styles";
+import LinearProgress, {
+  linearProgressClasses,
+} from "@mui/material/LinearProgress";
+const vocab = require("../../../data/vocab.json");
+import IconButton from "@mui/material/IconButton";
+import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import { QuestionContext } from "../../../context/QuestionContext";
 export default function Vocabulary({ pageContent, links }) {
   // console.log("page Content", pageContent);
   // console.log("links", links);
-  const [dialogIsOpen, setDialogIsOpen] = useState(false);
 
-  const toggleDrawer = () => setDialogIsOpen(!dialogIsOpen);
+  console.log("NEXT_PUBLIC_answerSaltLa", process.env.NEXT_PUBLIC_answerSaltLa);
 
-  return <Container>Hello</Container>;
+  const { fetchQuestions, questions } = useContext(QuestionContext);
+  useEffect(() => {
+    fetchQuestions();
+  }, [fetchQuestions]);
+
+  console.log("questions", questions);
+
+  function playAudio() {
+    const audioUrl = vocab.topics[0].questions[0].audio;
+    console.log("playing", audioUrl);
+
+    const audio = new Audio(audioUrl);
+    audio.play();
+  }
+
+  const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+    height: 10,
+    borderRadius: 5,
+    [`&.${linearProgressClasses.colorPrimary}`]: {
+      backgroundColor:
+        theme.palette.grey[theme.palette.mode === "light" ? 200 : 800],
+    },
+    [`& .${linearProgressClasses.bar}`]: {
+      borderRadius: 5,
+      backgroundColor: theme.palette.mode === "light" ? "#32CD32" : "	#006400",
+    },
+  }));
+
+  //console.log("vocab", vocab);
+
+  return (
+    <Container sx={{ justifyContent: "center", alignItems: "center", mt: 20 }}>
+      <BorderLinearProgress
+        variant="determinate"
+        value={50}
+        sx={{ my: 5 }}
+      ></BorderLinearProgress>
+      <Typography sx={{ fontSize: 18, fontWeight: "600", mb: 2 }}>
+        Question will go here.Question will go here.Question will go
+        here.Question will go here. really?
+        <IconButton aria-label="play" onClick={playAudio}>
+          <VolumeUpIcon fontSize="inherit" />
+        </IconButton>
+      </Typography>
+
+      <Grid container spacing={2} sx={{ mb: 5 }}>
+        {[1, 3, 8, 15].map((num) => (
+          <Grid key={num} item xs={12} md={6}>
+            <Paper
+              sx={{
+                minWidth: 100,
+                cursor: "pointer",
+                p: 2,
+                //border: "1px solid gray",
+                ":hover": {
+                  boxShadow: 10, // theme.shadows[20]
+                },
+              }}
+              onClick={() => console.log("ans1 clicked")}
+            >
+              {"answer ".repeat(num)}
+            </Paper>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+  );
 }
 
 const getUrlFromTitle = (lessonPath, pathName) =>
@@ -105,6 +175,7 @@ export async function getStaticPaths() {
   console.log("paths", paths);
   return {
     paths,
-    fallback: "blocking",
+    // fallback: "blocking",
+    fallback: false,
   };
 }
