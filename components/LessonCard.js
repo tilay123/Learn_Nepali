@@ -6,11 +6,12 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
-import { useState } from "react";
+import { useContext } from "react";
 import Container from "@mui/material/Container";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { AuthContext } from "../context/AuthContext";
 const LessonCard = ({ title, description, cardDataList, id }) => {
   const linearGradient = [
     ["#10ace0", "#1055e0"],
@@ -21,6 +22,7 @@ const LessonCard = ({ title, description, cardDataList, id }) => {
 
   const router = useRouter();
   const matches = useMediaQuery("(min-width:250px)");
+  const { state } = useContext(AuthContext);
 
   const oneLineText = (str) => str.toLocaleLowerCase().split(" ").join("");
 
@@ -76,7 +78,8 @@ const LessonCard = ({ title, description, cardDataList, id }) => {
                   cursor: "pointer",
                 }}
                 onClick={() => {
-                  console.log("Clicked card");
+                  console.log("Card Clicked; user:", state.user);
+
                   router.replace(
                     `/${oneLineText(title)}/${oneLineText(element.name)}/1`
                   );
