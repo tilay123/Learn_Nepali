@@ -1,17 +1,19 @@
-import React, { createContext, useReducer, useCallback } from "react";
+import { createContext, useReducer, useCallback, useEffect } from "react";
 import app from "../helper/firebaseInit";
 import {
   getAuth,
+  signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
-const initialState = { user: null, error: null };
+const initialState = { user: null, error: null, routeUrl: null };
 
 export const AuthContext = createContext(initialState);
 const auth = getAuth(app);
+
 const authReducer = (state, action) => {
   switch (action.type) {
     case "sign_in":
@@ -22,6 +24,8 @@ const authReducer = (state, action) => {
       return { ...state, user: null };
     case "add_error":
       return { ...state, error: action.payload.error };
+    case "add_route":
+      return { ...state, routeUrl: action.payload.routeUrl };
 
     default:
       return state;
@@ -30,6 +34,15 @@ const authReducer = (state, action) => {
 
 const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      console.log("onAuthStateChanged called");
+      if (!user) {
+        dispatch({ type: "sign_out" });
+      }
+    });
+  }, []);
 
   async function signUp(email, password) {
     createUserWithEmailAndPassword(auth, email, password)
@@ -42,27 +55,45 @@ const AuthProvider = ({ children }) => {
       })
       .catch((error) => {
         dispatch({ type: "add_error", payload: { error: error.message } });
+
         throw error;
       });
   }
 
   async function signIn(email, password) {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
 
-        console.log("User signed in", user);
-        dispatch({ type: "sign_in", payload: { user } });
+      console.log("User signed in", user);
+      dispatch({ type: "sign_in", payload: { user } });
+    } catch (error) {
+      console.log("User clicked sign in", error);
 
-        // ...
-      })
-      .catch((error) => {
-        console.log("User clicked sign in", error);
-        //setError("There was an error. Couldn't create the account");
-        dispatch({ type: "add_error", payload: { error: error.message } });
-        throw error;
-      });
+      //setError("There was an error. Couldn't create the account");
+      dispatch({ type: "add_error", payload: { error: error.message } });
+      throw error;
+    }
+  }
+
+  async function signInWithGoogle() {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log("User signed in", user);
+      dispatch({ type: "sign_in", payload: { user } });
+    } catch (error) {
+      console.log("User clicked sign in", error);
+      console.log("Error Code", error.code);
+      //setError("There was an error. Couldn't create the account");
+      dispatch({ type: "add_error", payload: { error: error.message } });
+      throw error;
+    }
   }
 
   const loadCurrentUser = useCallback(async () => {
@@ -102,16 +133,22 @@ const AuthProvider = ({ children }) => {
     // }
   };
 
+  const addRouteUrl = (url) => {
+    dispatch({ type: "add_route", payload: { routeUrl: url } });
+  };
+
   return (
     <AuthContext.Provider
       value={{
         state,
         signUp,
         signIn,
+        signInWithGoogle,
         addError,
         signOutUser,
         confirmUser,
         loadCurrentUser,
+        addRouteUrl,
       }}
     >
       {children}

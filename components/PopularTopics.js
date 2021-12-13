@@ -18,7 +18,7 @@ import { useRouter } from "next/router";
 
 // eslint-disable-next-line
 const PopularTopics = () => {
-  const { state } = useContext(AuthContext);
+  const { state, addRouteUrl } = useContext(AuthContext);
   const [authDialogIsOpen, setAuthDialogIsOpen] = useState(false);
 
   const router = useRouter();
@@ -79,6 +79,8 @@ const PopularTopics = () => {
               router.replace(url);
             } else {
               console.log("User NOT logged in");
+
+              addRouteUrl(url);
               toggleDialog();
             }
           }}
@@ -87,8 +89,8 @@ const PopularTopics = () => {
       <Dialog
         open={authDialogIsOpen}
         onClose={toggleDialog}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
+        aria-labelledby="auth-alert-dialog"
+        maxWidth="md"
       >
         <AuthDialogContent toggleDialog={toggleDialog} />
       </Dialog>
