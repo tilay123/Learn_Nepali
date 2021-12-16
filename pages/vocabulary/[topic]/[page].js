@@ -1,5 +1,5 @@
-import path from "path";
-import fs from "fs";
+// import path from "path";
+// import fs from "fs";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
@@ -19,6 +19,10 @@ const vocab = require("../../../data/vocab.json");
 import IconButton from "@mui/material/IconButton";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import { QuestionContext } from "../../../context/QuestionContext";
+import {
+  getLowerCaseTitle,
+  getLessonContents,
+} from "../../../helper/urlHelpers";
 export default function Vocabulary({ pageContent, links }) {
   // console.log("page Content", pageContent);
   // console.log("links", links);
@@ -94,16 +98,16 @@ export default function Vocabulary({ pageContent, links }) {
   );
 }
 
-const getUrlFromTitle = (lessonPath, pathName) =>
-  `/${lessonPath}/` + pathName.toLocaleLowerCase().split(" ").join("");
+// const getUrlFromTitle = (lessonPath, pathName) =>
+//   `/${lessonPath}/` + pathName.toLocaleLowerCase().split(" ").join("");
 
-const getLowerCaseTitle = (str) => str.toLocaleLowerCase().split(" ").join("");
+// const getLowerCaseTitle = (str) => str.toLocaleLowerCase().split(" ").join("");
 
-const getLessonContents = (fileName) => {
-  const filePath = path.join(process.cwd(), "data", `${fileName}.json`);
-  const content = fs.readFileSync(filePath, "utf8");
-  return JSON.parse(content);
-};
+// const getLessonContents = (fileName) => {
+//   const filePath = path.join(process.cwd(), "data", `${fileName}.json`);
+//   const content = fs.readFileSync(filePath, "utf8");
+//   return JSON.parse(content);
+// };
 
 export async function getStaticProps({ params }) {
   const { topic, page } = params;

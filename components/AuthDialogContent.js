@@ -14,6 +14,7 @@ import { AuthContext } from "../context/AuthContext";
 import { useContext, useState, useRef } from "react";
 import isEmail from "validator/lib/isEmail";
 import { useRouter } from "next/router";
+
 export default function AuthDialogContent({ toggleDialog }) {
   const [value, setValue] = useState("one");
 

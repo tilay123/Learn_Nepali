@@ -9,6 +9,9 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
+import nookies from "nookies";
+import Cookies from "js-cookie";
+
 const initialState = { user: null, error: null, routeUrl: null };
 
 export const AuthContext = createContext(initialState);
@@ -36,11 +39,22 @@ const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, async (user) => {
       console.log("onAuthStateChanged called");
+
       if (!user) {
-        dispatch({ type: "sign_out" });
+        //nookies.destroy(undefined, "token");
+        Cookies.remove("token", { path: "/" });
+      } else {
+        const token = await user.getIdToken();
+        console.log("token", token);
+        //nookies.set(undefined, "token", token, { path: "/" });
+        Cookies.set("token", token, { path: "/" });
       }
+
+      !!user
+        ? dispatch({ type: "sign_in", payload: { user } })
+        : dispatch({ type: "sign_out" });
     });
   }, []);
 

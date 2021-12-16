@@ -27,17 +27,10 @@
           "id": "a9a4abd6",
           "question": "काका",
           "options": [
-            {
-              "type": "word",
-              "id": "sdf",
-              "question": "काका",
-              "options": [
-                { "eng": "Uncle on mother's side" },
-                { "eng": "Uncle on fathers's side" },
-                { "eng": "Brother" },
-                { "eng": "Sister" }
-              ]
-            }
+            { "eng": "Uncle on mother's side" },
+            { "eng": "Uncle on fathers's side" },
+            { "eng": "Brother" },
+            { "eng": "Sister" }
           ],
           "correct": "Uncle on fathers's side",
           "image": "#",

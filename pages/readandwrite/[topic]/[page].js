@@ -14,7 +14,10 @@ import Displayer from "../../../helper/Displayer";
 import { useState } from "react";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Button from "@mui/material/Button";
-
+import {
+  getLowerCaseTitle,
+  getLessonContents,
+} from "../../../helper/urlHelpers";
 export default function ReadAndWrite({ pageContent, links, currentPageIndex }) {
   // console.log("page Content", pageContent);
   console.log(
@@ -152,16 +155,11 @@ export default function ReadAndWrite({ pageContent, links, currentPageIndex }) {
   );
 }
 
-const getUrlFromTitle = (lessonPath, pathName) =>
-  `/${lessonPath}/` + pathName.toLocaleLowerCase().split(" ").join("");
-
-const getLowerCaseTitle = (str) => str.toLocaleLowerCase().split(" ").join("");
-
-const getLessonContents = (fileName) => {
-  const filePath = path.join(process.cwd(), "data", `${fileName}.json`);
-  const content = fs.readFileSync(filePath, "utf8");
-  return JSON.parse(content);
-};
+// const getLessonContents = (fileName) => {
+//   const filePath = path.join(process.cwd(), "data", `${fileName}.json`);
+//   const content = fs.readFileSync(filePath, "utf8");
+//   return JSON.parse(content);
+// };
 
 export async function getStaticProps({ params }) {
   const { topic, page } = params;
