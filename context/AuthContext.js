@@ -10,7 +10,6 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import nookies from "nookies";
-import Cookies from "js-cookie";
 
 const initialState = { user: null, error: null, routeUrl: null };
 
@@ -43,13 +42,11 @@ const AuthProvider = ({ children }) => {
       console.log("onAuthStateChanged called");
 
       if (!user) {
-        //nookies.destroy(undefined, "token");
-        Cookies.remove("token", { path: "/" });
+        nookies.destroy(undefined, "token");
       } else {
         const token = await user.getIdToken();
-        console.log("token", token);
-        //nookies.set(undefined, "token", token, { path: "/" });
-        Cookies.set("token", token, { path: "/" });
+        // console.log("token", token);
+        nookies.set(undefined, "token", token, { path: "/" });
       }
 
       !!user

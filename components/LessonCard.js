@@ -76,7 +76,11 @@ const LessonCard = ({ title, description, cardDataList, id, handleRoute }) => {
                 }}
                 onClick={() =>
                   handleRoute(
-                    `/${oneLineText(title)}/${oneLineText(element.name)}/1`
+                    title === "Vocabulary"
+                      ? `/${oneLineText(title)}/${oneLineText(
+                          element.name
+                        )}/quiz`
+                      : `/${oneLineText(title)}/${oneLineText(element.name)}/1`
                   )
                 }
               >

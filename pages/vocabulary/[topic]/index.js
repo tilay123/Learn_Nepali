@@ -3,21 +3,70 @@ import {
   getLessonContents,
 } from "../../../helper/urlHelpers";
 import nookies from "nookies";
-import Cookies from "js-cookie";
-export default function Levels() {
+import Paper from "@mui/material/Paper";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Timeline from "@mui/lab/Timeline";
+import TimelineItem from "@mui/lab/TimelineItem";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineContent from "@mui/lab/TimelineContent";
+import TimelineDot from "@mui/lab/TimelineDot";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import LockIcon from "@mui/icons-material/Lock";
+import LockOpenIcon from "@mui/icons-material/LockOpen";
+export default function Levels({ date, level, total }) {
   // List all topics of read and write
-  return <div>Display all Levels</div>;
+
+  const matches = useMediaQuery("(min-width:220px)");
+
+  return (
+    <Container sx={{ p: 2 }}>
+      <div>
+        Display all Levels{" "}
+        {`${date} CurrentLevel: ${level} totalLevels:${total}`}
+      </div>
+      <Timeline position={matches ? "alternate" : "right"}>
+        {Array.from(Array(10).keys()).map((itm, index) => (
+          <TimelineItem key={index}>
+            <TimelineSeparator>
+              <TimelineDot color="secondary">
+                {index == 0 ? <LockOpenIcon /> : <LockIcon />}
+              </TimelineDot>
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>
+              <Paper sx={{ p: 2 }}>
+                <Typography sx={{ fontWeight: 500 }}>10 Words</Typography>
+                <Typography>Learn 10 new words.</Typography>
+              </Paper>
+            </TimelineContent>
+          </TimelineItem>
+        ))}
+      </Timeline>
+    </Container>
+  );
 }
 
-export async function getStaticProps(ctx) {
-  const { topic, page } = ctx.params;
+export async function getServerSideProps(ctx) {
+  const { topic } = ctx.params;
+  console.log("topic", topic);
 
   const cookies = nookies.get(ctx);
 
-  console.log("cookies", cookies);
-  console.log("Context", ctx);
-
+  console.log("Time", new Date());
+  //console.log("cookies", cookies.token);
   // console.log("pagePath-Props", getLowerCaseTitle(pageTitle));
+
+  // getAuth()
+  // .verifyIdToken(idToken)
+  // .then((decodedToken) => {
+  //   const uid = decodedToken.uid;
+  //   // ...
+  // })
+  // .catch((error) => {
+  //   // Handle error
+  // });
 
   const fileContents = await getLessonContents("vocab");
 
@@ -25,70 +74,26 @@ export async function getStaticProps(ctx) {
     (tpx) => topic === getLowerCaseTitle(tpx.name)
   );
 
-  if (!topic || !content || !page) {
+  if (!topic || !content) {
     return {
       notFound: true,
     };
   }
 
-  if (
-    isNaN(page) ||
-    content?.pages == null ||
-    content.pages[Number(page) - 1] == null
-  )
-    return {
-      notFound: true,
-    };
+  const currentLevel = 1;
 
-  const pageTitles = content.pages.map((pg, index) => ({
-    title: pg.title,
-    url: encodeURIComponent(`/vocab/${topic}/${index + 1}`),
-  }));
+  const totalLevels = Math.ceil(content.questions.length / 2);
 
-  content = content.pages[Number(page) - 1];
-
-  console.log(`"topic-Props: ", ${topic} content: ${content} page:${page}`);
+  // const pageTitles = content.pages.map((pg, index) => ({
+  //   title: pg.title,
+  //   url: encodeURIComponent(`/vocab/${topic}/${index + 1}`),
+  // }));
 
   return {
     props: {
-      pageContent: content,
-      links: pageTitles,
+      date: new Date().toISOString(),
+      level: currentLevel,
+      total: totalLevels,
     },
-    revalidate: false,
-  };
-}
-
-// const getLessonContents = (fileName) => {
-//   const filePath = path.join(process.cwd(), "data", `${fileName}.json`);
-//   const content = fs.readFileSync(filePath, "utf8");
-//   return JSON.parse(content);
-// };
-export async function getStaticPaths() {
-  const fileContents = await getLessonContents("vocab");
-
-  //  console.log("File contents", fileContents);
-  var paths = fileContents.topics.map((topic) => {
-    //console.log("Page Name", getLowerCaseTitle(topic.name));
-    // console.log("Topic-Path", topic);
-    // console.log("TopicPages", topic.pages.length);
-
-    if (topic.length == 0) return;
-
-    return topic.pages.map((page, index) => {
-      return {
-        params: {
-          topic: getLowerCaseTitle(topic.name),
-        },
-      };
-    });
-  });
-
-  paths = [].concat.apply([], paths).filter((x) => x != null);
-
-  console.log("paths", paths);
-  return {
-    paths,
-    // fallback: "blocking",
-    fallback: false,
   };
 }

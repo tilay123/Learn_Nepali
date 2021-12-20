@@ -13,12 +13,12 @@
           "id": "7c5c190e",
           "question": "मामा",
           "options": [
-            { "eng": "Uncle on mother's side" },
-            { "eng": "Uncle on fathers's side" },
+            { "eng": "Mother's brother" },
+            { "eng": "Father's brother" },
             { "eng": "Brother" },
             { "eng": "Sister" }
           ],
-          "correct": "Uncle on mother's side",
+          "correct": "Mother's brother",
           "image": "#",
           "audio": "/assets/mama.mp3"
         },
@@ -27,14 +27,29 @@
           "id": "a9a4abd6",
           "question": "काका",
           "options": [
-            { "eng": "Uncle on mother's side" },
-            { "eng": "Uncle on fathers's side" },
-            { "eng": "Brother" },
-            { "eng": "Sister" }
+            { "eng": "Mother's brother" },
+            { "eng": "Sister" },
+            { "eng": "Father's brother" },
+            { "eng": "Brother" }
           ],
-          "correct": "Uncle on fathers's side",
+          "correct": "Father's brother",
           "image": "#",
           "audio": "/assets/kaka.mp3",
+          "description": ""
+        },
+        {
+          "type": "word",
+          "id": "a9a4abd6",
+          "question": "भाई",
+          "options": [
+            { "eng": "Mother's brother" },
+            { "eng": "Sister" },
+            { "eng": "Father's brother" },
+            { "eng": "Brother" }
+          ],
+          "correct": "Brother",
+          "image": "#",
+          "audio": "",
           "description": ""
         }
       ]
